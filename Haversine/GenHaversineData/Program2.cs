@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 
+// The number of entries to generate
 const int num = 10;
 
 const double minX = -90.0;
@@ -25,6 +26,8 @@ for (int i = 1; i != num; i++)
         X1 = Math.Round(RandomDouble(minX, maxX), 6),
         Y1 = Math.Round(RandomDouble(minY, maxY), 6)
     };
+
+    // We just write the json by hand as it's faster than serialiazing for large values of num
     sb.Append($"    {{ \"x0\": {pair.X0}, \"y0\": {pair.Y0}, \"x1\": {pair.X1}, \"y1\": {pair.Y1} }}");
 
     if (i != num - 1)
@@ -42,6 +45,7 @@ sb.Append($"  ] {Environment.NewLine}}}{Environment.NewLine}");
 
 long midTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
+// Write to file
 string outputFileName = $"data_{num}_flex.json";
 string outputFilePath = Path.Combine("..", "..", "..", "..", "data", outputFileName);
 File.WriteAllText(outputFilePath, sb.ToString());
