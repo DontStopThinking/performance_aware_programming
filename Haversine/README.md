@@ -1,6 +1,6 @@
 # Haversine Distance
 
-C# program to calculate the Haversine distance.
+C# program to calculate average of Haversine distances.
 
 ## Input data
 `GenHaversine` will generate the json data in the following format:
@@ -25,7 +25,7 @@ Change the value of the `num` variable to specify the number of entries to gener
 The data will be generated inside `data/data_{num}_flex.json`
 
 ## Calculate Haversine
-The `Haversine` program will read the input json and calculate and print the average of all the haversine distances. Additionally it will also print the time taken to read the input and perform the calculation.
+`Haversine` will read the input json and calculate and print the average of all the haversine distances between given array of `(x0, y0, x1, y1)` co-ordinates. Additionally it will also print the time taken to read the input and perform the calculation.
 
 ```
 Result: 10010.714040933892
